@@ -6,53 +6,53 @@
 import _ "github.com/LiYanBing/grpc_debug/grpc_encoding/json"
 
 ```
-####安装 grpc_debug
+#### 安装 grpc_debug
 
 ```
 go get github.com/LiYanBing/grpc_debug
 ```
 
-####查看具体参数用法
+#### 查看具体参数用法
 
 ```
 cd $GOPATH/bin
 ./grpc_debug -h
 ```
 
-####参数说明：
+#### 参数说明：
 
-#####--protocol : debug协议方式：
+##### --protocol : debug协议方式：
 
    grpc：当前请求直接通过GRPC方式请求addr对应的地址；
    
    http：本地会启一个http的服务(监听http_addr)，然后可以通过http的方式将请求参数上传
    内部再通过GRPC的方式发送到addr的服务地址上
 
-#####--data : 请求参数,默认值 {}(json格式)
+##### --data : 请求参数,默认值 {}(json格式)
 
 
-#####--ctx : 通过GRPC发送数据时需要在Context中传递的参数（json格式，且key,value都是string类型）
+##### --ctx : 通过GRPC发送数据时需要在Context中传递的参数（json格式，且key,value都是string类型）
 
 
-#####--file : 请求参数文件路径，如果传递了
+##### --file : 请求参数文件路径，如果传递了
 
 
-#####--method: 请求的方法,格式： /{package}.{Service}/{Method} 
+##### --method: 请求的方法,格式： /{package}.{Service}/{Method} 
 
    package 表示定义proto文件的package，Service表示rpc方法的Service名称，method表示请求的method
 
-#####--addr : 请求的grpc服务地址ip:port，默认 127.0.0.1:4096
+##### --addr : 请求的grpc服务地址ip:port，默认 127.0.0.1:4096
 
-#####--http_addr : 本地http监听的地址 ip:port，默认 127.0.0.1:2048
+##### --http_addr : 本地http监听的地址 ip:port，默认 127.0.0.1:2048
 
-#####--cert : grpc 服务器证书地址；程序启动的时候传递
+##### --cert : grpc 服务器证书地址；程序启动的时候传递
 
-#####--server_name : 主机名称；程序启动的时候传递
+##### --server_name : 主机名称；程序启动的时候传递
 
 ### 使用示例
 
-####直接调用GRPC方式：
-#####直接通过data传递请求参数（json）
+#### 直接调用GRPC方式：
+##### 直接通过data传递请求参数（json）
 
 ```
 ./bin/grpcdebug 
@@ -62,7 +62,7 @@ cd $GOPATH/bin
 
 ```
 
-#####通过file方式传递请求参数（json）
+##### 通过file方式传递请求参数（json）
 
 ```
 ./bin/grpcdebug 
@@ -71,7 +71,7 @@ cd $GOPATH/bin
 -method=/{package}.{Service}/{Method}
 ```
 
-###通过http方式接受参数
+### 通过http方式接受参数
 启动一个http服务器，通过Postman 或者 curl 发送http请求；内部会转化成GRPC请求
 如果在启动的时候传递了 --addr 参数则会在程序启动时与GRPC服务器建立连接
 
@@ -112,7 +112,7 @@ curl
 127.0.0.1:2048
 ```
 
-#####http 请求参数
+##### http 请求参数
 
 ```
 {
