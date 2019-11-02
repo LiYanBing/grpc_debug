@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"net"
 
@@ -34,6 +35,8 @@ func (s *Example) GetName(ctx context.Context, args *example.GetNameRequest) (*e
 		return nil, errors.New("empty args")
 	}
 
+	ctxUID := ctx.Value("uid")
+	fmt.Println("userID: ", ctxUID)
 	return &example.GetNameResponse{
 		Name: args.Name,
 		Age:  args.Age,
