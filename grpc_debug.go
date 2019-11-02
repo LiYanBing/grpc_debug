@@ -85,6 +85,11 @@ func HTTPProtocol() {
 			return
 		}
 	}
+	defer func() {
+		if grpcConn != nil {
+			grpcConn.Close()
+		}
+	}()
 
 	err = http.ListenAndServe(http_addr, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		type Request struct {
@@ -124,6 +129,10 @@ func HTTPProtocol() {
 
 		// 如果传递了grpc地址且跟初始化的地址不一样则重新建立连接
 		if req.GRPCAddr != "" && req.GRPCAddr != addr {
+			if grpcConn != nil {
+				grpcConn.Close()
+			}
+
 			grpcConn, err = GetGRPCConn(req.GRPCAddr)
 			if err != nil {
 				HTTPJSONResponse(w, map[string]interface{}{
@@ -190,6 +199,7 @@ func GRPCProtocol() {
 	if err != nil {
 		panic(err)
 	}
+	defer conn.Close()
 
 	_, err = Invoke(GetGRPCContext(), conn, method, GetGRPCData())
 	if err != nil {
