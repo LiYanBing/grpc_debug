@@ -54,7 +54,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/LiYanBing/grpc_debug/example/server">
+  <component name="RunManager" selected="Go Build.go build github.com/LiYanBing/grpc_debug/example/client">
+    <configuration name="go build github.com/LiYanBing/grpc_debug/example/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="grpc_forward" />
+      <working_directory value="$PROJECT_DIR$/../grpc_debug" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/../grpc_debug/example/client/main.go" />
+      <package value="github.com/LiYanBing/grpc_debug/example/client" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build github.com/LiYanBing/grpc_debug/example/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="grpc_forward" />
       <working_directory value="$PROJECT_DIR$" />
@@ -84,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/LiYanBing/grpc_debug/example/client" />
         <item itemvalue="Go Build.go build github.com/LiYanBing/grpc_debug/example/server" />
         <item itemvalue="Go Build.go build github.com/liyanbing/grpc_forward/server" />
         <item itemvalue="Go Build.go build github.com/liyanbing/grpc_forward/client" />
