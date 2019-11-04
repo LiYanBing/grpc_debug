@@ -35,11 +35,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../grpc_debug/example" />
       <recent name="$PROJECT_DIR$/example/api" />
       <recent name="$PROJECT_DIR$/example/server" />
       <recent name="$PROJECT_DIR$/example" />
       <recent name="$PROJECT_DIR$/api" />
-      <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
   <component name="RunDashboard">
